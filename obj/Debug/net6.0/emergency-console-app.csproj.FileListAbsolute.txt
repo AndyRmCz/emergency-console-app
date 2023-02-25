@@ -1,0 +1,17 @@
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\bin\Debug\net6.0\emergency-console-app.exe
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\bin\Debug\net6.0\emergency-console-app.deps.json
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\bin\Debug\net6.0\emergency-console-app.runtimeconfig.json
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\bin\Debug\net6.0\emergency-console-app.dll
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\bin\Debug\net6.0\emergency-console-app.pdb
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\bin\Debug\net6.0\Geolocation.dll
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\emergency-console-app.csproj.AssemblyReference.cache
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\emergency-console-app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\emergency-console-app.AssemblyInfoInputs.cache
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\emergency-console-app.AssemblyInfo.cs
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\emergency-console-app.csproj.CoreCompileInputs.cache
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\emergency-console-app.csproj.CopyComplete
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\emergency-console-app.dll
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\refint\emergency-console-app.dll
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\emergency-console-app.pdb
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\emergency-console-app.genruntimeconfig.cache
+C:\Users\85127608\Documents\VS Code\DotNet\emergency-console-app\obj\Debug\net6.0\ref\emergency-console-app.dll

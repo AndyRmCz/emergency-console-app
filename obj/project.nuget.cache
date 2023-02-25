@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dPssTR0tv0qT2pVunnP4TVoFRgRApiXvE+YXH9QkYsKlEwjWOlSoYfpe3F7D6758qGCsw2DSyylH8Avhw+L/bA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\85127608\\Documents\\VS Code\\DotNet\\emergency-console-app\\emergency-console-app.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\85127608\\.nuget\\packages\\geolocation\\1.2.1\\geolocation.1.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}
