@@ -6,19 +6,32 @@ class Program
 {
     static void Main(string[] args)
     {
-        
-        
+                
         Coordinate coordinate = new Coordinate();
         string closestCenter = "";
         double distance;
-        double lat = 0;
-        double lon = 0;
+        double lat;
+        double lon;
+        string type ="";
+        string desc = "";
         
-
-        getClosestCenter(coordinate, out closestCenter, out distance);
-        getLatAndLon(out lat, out lon);
+        getEmergencyInfo(out type, out desc, out lat, out lon);
         coordinate.Latitude = lat;
         coordinate.Longitude = lon;
+
+        Console.Clear();
+        getClosestCenter(coordinate, out closestCenter, out distance);
+        String tiempoLlegada = Convert.ToString(calcTime(distance));
+        String horaLlegada = (DateTime.Now.AddMinutes(calcTime(distance)).ToShortTimeString());
+        Console.Clear();
+
+        System.Console.WriteLine("Ha solicitado un servidio de " + type + " que será atendido desde el centro " + closestCenter);
+        System.Console.WriteLine("La descripción de su emergencia es:");
+        System.Console.WriteLine(desc);
+        System.Console.WriteLine();
+        System.Console.WriteLine("Se encuentra a una distancia aporoximada de: " + distance + "km a " + tiempoLlegada + " minutos del centro");
+        System.Console.WriteLine("La hora aporoximada de llegada será: " + horaLlegada);
+        
 
     }
 
@@ -42,18 +55,21 @@ class Program
             {"Cerro de la Estrella","19.342500","-99.088611"},
             {"Cerro de Chapultepec","19.422778","-99.174444"}
         };
-        double minDistance = 1000000; //km
         Coordinate center = new Coordinate();
+        double minDistance = 1000000; //km
         string closeCenter = "";
-        for (int i = 0; i <= centers.Rank;i++){
+        for(int i = 0; i < 17; i++){
             center.Latitude = Convert.ToDouble(centers[i,1]);
             center.Longitude = Convert.ToDouble(centers[i,2]);
+
             if(GeoCalculator.GetDistance(center, incidentPlace) < minDistance){
-                minDistance = GeoCalculator.GetDistance(center,incidentPlace);
+                minDistance = GeoCalculator.GetDistance(center,incidentPlace,1,DistanceUnit.Kilometers);
                 closeCenter = centers[i,0];
 
             }
+
         }
+        
         closestCenter = closeCenter;
         distance = minDistance;
 
@@ -66,4 +82,66 @@ class Program
         System.Console.Write("Ingresa la longitud del lugar de emergencia: ");
         longitud = Convert.ToDouble(Console.ReadLine());
     }
+
+    static void getEmergencyInfo(out string type, out string desc, out double lat, out double lon){
+        bool continuar = true;
+        string intType = "";
+        double intLon = 0;
+        double intLat = 0;
+        
+        
+        do{
+            Console.WriteLine("¿De que servicio requiere?");
+            Console.WriteLine("1.- Policia");
+            Console.WriteLine("2.- Bomberos");
+            Console.WriteLine("3.- Ambulancia");
+            Console.WriteLine("0.- Salir");
+            char op = Char.ToUpper(GetKeyPress("Eliga una opcion: ", new Char[] { '1', '2', '3', '0' } ));
+            if (op == '0'){
+                continuar = false;
+            }
+            else if (op == '1'){
+            //Ejecuta metodo para recolectar datos de entrada
+                // Console.Clear();
+                intType = "Policia";
+                break;
+            }
+            else if (op == '2'){
+                intType = "Bomberos";
+                break;
+            }
+            else if (op == '3'){
+                intType = "Ambulancia";
+                break;
+            }
+        }while(continuar);
+        type = intType;
+        getLatAndLon(out intLat, out intLon);
+        lat = intLat;
+        lon = intLon;
+        System.Console.WriteLine("Ingrese una breve descripcion de su emergencia: ");
+        desc = Console.ReadLine()!;
+    }
+
+    static double calcTime(double distance){
+        const int velocity = 120;
+        double time = (distance/velocity);
+        return time*60;
+    }
+
+    private static Char GetKeyPress(String msg, Char[] validChars)
+   {
+      ConsoleKeyInfo keyPressed;
+      bool valid = false;
+
+      Console.WriteLine();
+      do {
+         Console.Write(msg);
+         keyPressed = Console.ReadKey();
+         Console.WriteLine();
+         if (Array.Exists(validChars, ch => ch.Equals(Char.ToUpper(keyPressed.KeyChar))))
+            valid = true;
+      } while (! valid);
+      return keyPressed.KeyChar;
+   }
 }
