@@ -25,7 +25,7 @@ class Program
         String horaLlegada = (DateTime.Now.AddMinutes(calcTime(distance)).ToShortTimeString());
         Console.Clear();
 
-        System.Console.WriteLine("Ha solicitado un servidio de " + type + " que será atendido desde el centro " + closestCenter);
+        System.Console.WriteLine("Ha solicitado un servicio de " + type + " que será atendido desde el centro " + closestCenter);
         System.Console.WriteLine("La descripción de su emergencia es:");
         System.Console.WriteLine(desc);
         System.Console.WriteLine();
